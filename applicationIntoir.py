@@ -3,6 +3,7 @@
 #
 
 import streamlit as st
+import spacy
 
 # Set page configuration
 st.set_page_config(
@@ -11,7 +12,7 @@ st.set_page_config(
 )
 
 # Add title
-st.title("Intoir yout work situation")
+st.title("Intoir your work situation")
 
 # Add text input field
 input_text = st.text_area("Describe your last work situations last six months ?:")
