@@ -5,6 +5,9 @@
 import streamlit as st
 import spacy
 
+# Load SpaCy model
+nlp = spacy.load('en_core_web_sm')
+
 # Set page configuration
 st.set_page_config(
     page_title="applicationIntoir",
