@@ -1,7 +1,6 @@
-# testSpacy within streamlit
-import streamlit as st
-import spacy_streamlit as spacy
+import spacy
+from spacy_streamlit import visualize_parser
 
-models = ["en_core_web_sm", "en_core_web_md"]
-default_text = "Sundar Pichai is the CEO of Google."
-spacy.visualize(models, default_text)
+nlp = spacy.load("en_core_web_sm")
+doc = nlp("This is a text")
+visualize_parser(doc)
