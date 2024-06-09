@@ -1,6 +1,6 @@
 # fuction for reading data and other fuctions 
 # intoir_Functions 
-# 20249609
+# 20240609
 import pandas as pd
 import warnings
 import spacy
@@ -29,11 +29,11 @@ def split_string_into_three_parts(s):
 #
 def main_fx(in_leChat):
     excel_name = 'questionMistral_v01.xlsx'
-    intoirscoreRangePy= 'IntoirScoreRangePy.xlsx'
+    intoirscoreRangePy = 'IntoirScoreRangePy.xlsx'
     try:
         # Attempt to read the Excel file
         mistral_xlsx = pd.read_excel(excel_name, sheet_name='Mistral')
-        scoreRangeDf = pd.read_excel(intoirscoreRangePy, sheet_name='ScoreRangePy')
+        #scoreRangeDf = pd.read_excel(intoirscoreRangePy, sheet_name='ScoreRangePy')
     except FileNotFoundError:
         print(f"Error: The file at was not found.")
     except ValueError:
@@ -42,6 +42,7 @@ def main_fx(in_leChat):
         print(f"An unexpected error occurred: {e}")
         
     #
+    scoreRangeDf = pd.read_excel(intoirscoreRangePy, sheet_name='ScoreRangePy')
     scoreRangeDf = scoreRangeDf.rename(columns=lambda x: x.strip())
 
     mistral = mistral_xlsx[['Admin Reference','Construct','Order','likert_def','Likert Quantive','MckinseyManagerMistral', 'TenYearBoyMistral', 'VictorianWomanMistral','DrillSrgtMistral']] 
