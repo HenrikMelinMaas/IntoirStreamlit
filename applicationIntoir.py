@@ -4,6 +4,7 @@
 
 import streamlit as st
 import spacy
+import streamlit.components.v1 as components
 from intoir_Functions import   *
 
 # Load SpaCy model
@@ -38,15 +39,16 @@ if st.button("OK"):
 # The
 recommendations, mistral_out, mistral_score, construct_score = main_fx (input_text) 
 
-
+# View 
+components.html(html_doc, height=300) 
 # Display output text
-st.markdown(
-    f"""
-    ## Our recommendation
-    
-    {recommendations}
-
-    ### Based on 
-    """
+#st.markdown(
+#    f"""
+#    ## Our recommendation
+#    
+#    {recommendations}
+#
+#    ### Based on 
+#    """
 # Save data 
 )

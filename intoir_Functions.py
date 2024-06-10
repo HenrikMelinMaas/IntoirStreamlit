@@ -6,6 +6,7 @@ import warnings
 import spacy
 import numpy as np
 import re
+#import streamlit.components.v1 as components
 #
 nlp = spacy.load('en_core_web_sm')
 warnings.filterwarnings("ignore") # Turn off all warnings
@@ -25,6 +26,43 @@ def split_string_into_three_parts(s):
     part2 = s[part_length:2*part_length]
     part3 = s[2*part_length:]
     return part1, part2, part3
+    
+def make_html_recommendations (construct_score):
+    ''' Need Construct, Rank Recommendations
+    Return html'''
+    df = construct_score [['Construct', 'Rank', 'Recommendations']]
+    # Create HTML document
+    html_doc = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <style>
+    body {
+      width: 50%;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      font-weight: bold;
+    }
+    </style>
+    </head>
+    <body>
+    """
+
+    for row in df.itertuples():
+        html_doc += f"""
+        <div>
+          <span class='header'>{row.Construct}</span> - <span class='header'>{row.Rank}</span>
+          <p>{row.Recommendations}</p>
+        </div>
+        """
+
+    html_doc += """
+    </body>
+    </html>
+    """
+    return html_doc
+
 
 #
 def main_fx(in_leChat):
