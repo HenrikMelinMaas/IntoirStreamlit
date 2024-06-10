@@ -41,15 +41,4 @@ recommendations, mistral_out, mistral_score, construct_score = main_fx (input_te
 
 # View 
 outhtml = make_html_recommendations (construct_score)
-components.html(outhtml, height=300) 
-# Display output text
-#st.markdown(
-#    f"""
-#    ## Our recommendation
-#    
-#    {recommendations}
-#
-#    ### Based on 
-#    """
-# Save data 
-#)
+components.html(outhtml, height=430) 
