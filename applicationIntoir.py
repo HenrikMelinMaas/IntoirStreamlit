@@ -1,5 +1,5 @@
-# applicationIntoir.py 002
-# v003
+# applicationIntoir.py 
+# v004
 #
 
 import streamlit as st
@@ -17,7 +17,7 @@ st.set_page_config(
 )
 
 # Add title
-st.title("Intoir your work situation v003")
+st.title("Intoir your work situation v004")
 
 # Add text input field
 input_text = st.text_area("Describe your last work situations last six months ?:")
@@ -34,13 +34,14 @@ if st.button("OK"):
         st.write("Proceeding with the action...")
         # Add your logic here for what happens when the user clicks OK
     else:
-        st.error("The text must be more than 100 characters before proceeding.")
+        st.error("The text must be long.")
 
 # The
 recommendations, mistral_out, mistral_score, construct_score = main_fx (input_text) 
 
 # View 
-components.html(html_doc, height=300) 
+outhtml = make_html_recommendations (construct_score)
+components.html(outhtml, height=300) 
 # Display output text
 #st.markdown(
 #    f"""
