@@ -6,7 +6,7 @@ import streamlit as st
 import spacy
 import streamlit.components.v1 as components
 from intoir_Functions import   *
-
+input_text = "And Crispin Crispian shall neer go by, From this day to the ending of the world, But we in it shall be remember We few, we happy few, we band of brothers"
 # Load SpaCy model
 nlp = spacy.load('en_core_web_sm')
 
@@ -17,16 +17,17 @@ st.set_page_config(
 )
 
 # Add title
-st.title("Intoir your work situation v004")
+
+st.title("Describe your work situations  for the last six months ? ")
 
 # Add text input field
-input_text = st.text_area("Describe your last work situations last six months ?:")
+input_text = st.text_area(" Intoir your work situation v004:")
 
 # Check if the input text length is greater than 100 characters
 if len(input_text) > 100:
-    st.success("Text is more than 100 characters. You can proceed!")
+    st.success("Lets proceed!")
 else:
-    st.warning("Please enter at least 100 characters.")
+    st.warning("Please enter at least 60 words")
 
 # Add a button to simulate an action that should only proceed if the condition is met
 if st.button("OK"):
