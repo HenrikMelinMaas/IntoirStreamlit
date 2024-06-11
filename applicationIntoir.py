@@ -1,12 +1,11 @@
 # applicationIntoir.py 
 # v004
 #
-
 import streamlit as st
 import spacy
 import streamlit.components.v1 as components
 from intoir_Functions import   *
-input_text = "And Crispin Crispian shall neer go by, From this day to the ending of the world, But we in it shall be remember We few, we happy few, we band of brothers"
+#input_text = "And Crispin Crispian shall neer go by, From this day to the ending of the world, But we in it shall be remember We few, we happy few, we band of brothers"
 # Load SpaCy model
 nlp = spacy.load('en_core_web_sm')
 
@@ -16,9 +15,8 @@ st.set_page_config(
     layout="wide"
 )
 
-# Add title
-
-st.title("Describe your work situations  for the last six months ? ")
+# Add title´
+st.title("Agile retrospective - describe your work situations  for the last six months on the procject? ")
 
 # Add text input field
 input_text = st.text_area(" Intoir your work situation v004:")
@@ -37,6 +35,10 @@ if st.button("OK"):
     else:
         st.error("The text must be long.")
 
+if len(input_text) < 100:
+    input_text = "And Crispin Crispian shall neer go by, From this day to the ending of the world, But we in it shall be remember We few, we happy few, we band of brothers"
+
+    
 # The
 recommendations, mistral_out, mistral_score, construct_score = main_fx (input_text) 
 
