@@ -24,7 +24,7 @@ input_text = st.text_area(" Intoir your work situation v004:")
 
 # Check if the input text length is greater than 100 characters
 if len(input_text) > 100:
-    st.success("Your answer will now be weighed against 270 hierarchy statements. The first three levels of the hierarchy are based on psychometric research definitions, while the lower part, which forms the bulk of the statements, is derived from Mistal et al")
+    st.success("Your answer will now be weighed against 270 hierarchy statements. The first three levels of the hierarchy are based on psychometric research definition, while the lower part, which forms the bulk of the statements, is derived from Mistal et al")
 else:
     st.warning("Please enter at least 60 words")
 
